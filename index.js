@@ -46,6 +46,24 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: false, save
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+app.get("/level", (req, res) => {
+  res.render("level", { model: {} });
+});
+
+// POST /create
+app.post("/level", (req, res) => {
+  const sql = "INSERT INTO level (name, phone, eduson_id, TestType, Level, Date, score) VALUES (?,?,?,?,?,?,?)";
+  const book = [req.body.name, req.body.phone,req.body.eduson_id, req.body.TestType, req.body.Level, req.body.Date, req.body.score ];
+  db.run(sql, book, err => {
+    if (err) {
+      return console.error(err.message);
+    }
+    res.redirect("/login");
+  });
+});
+
+
 app.get('/login',
   function(req, res){
     res.render('login');
