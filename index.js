@@ -63,6 +63,15 @@ app.post("/level", (req, res) => {
   });
 });
 
+app.get("/result", (req, res) => {
+  const sql = "SELECT * FROM level ORDER BY Date";
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return console.error(err.message);
+    }
+    res.render("result", { model: rows });
+  });
+});
 
 app.get('/login',
   function(req, res){
