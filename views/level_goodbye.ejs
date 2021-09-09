@@ -21,45 +21,77 @@
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65945715-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-65945715-4');
+  </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
 <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="/style.css">
 </head>
+<style>
+  body {
+    display: flex;
 
+    padding-top: 40px;
+
+    background-color: #f5f5f5;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 30rem;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ui fixed inverted menu" aria-label="Eighth navbar example">
+    <div class="container">
+      <a class="navbar-brand" href="/">💓옷덕후</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    </div>
+  </nav>
+  <main class="ui main container" style="margin-top:7rem;">
 
-  <main class = "container">
-    <h1>결과 보기 (<%= model.length %>)</h1>
+ 테스트를 완료했습니다. 곧 연락드리겠습니다. 감사합니다.
 
-    <table class="ui orange table">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>이름</th>
-        <th>핸드폰</th>
-        <th>에듀슨 아이디</th>
-        <th>테스트 타입</th>
-        <th>점수</th>
-        <th>날짜</th>
-      </tr></thead><tbody>
-        <% for (const item of model) { %>
-          <tr>
-            <td><%= item.id %></td>
-            <td><%= item.name %></td>
-            <td><%= item.phone %></td>
-            <td><%= item.eduson_id %></td>
-            <td><%= item.TestType %></td>
-            <td><%= item.score %></td>
-            <td><%= item.Date %></td>
-       
-          </tr>
-        <% } %>
-      </tbody>
-    </table>
-
- 
   </main>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

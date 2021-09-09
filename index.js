@@ -64,7 +64,7 @@ app.post("/level", (req, res) => {
 });
 
 app.get("/result", (req, res) => {
-  const sql = "SELECT * FROM level ORDER BY Date";
+  const sql = "SELECT * FROM level ORDER BY id DESC";
   db.all(sql, [], (err, rows) => {
     if (err) {
       return console.error(err.message);
@@ -81,7 +81,7 @@ app.get('/login',
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('result');
   });
   
 app.get('/logout',
