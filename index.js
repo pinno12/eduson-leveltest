@@ -59,7 +59,7 @@ app.post("/level", (req, res) => {
     if (err) {
       return console.error(err.message);
     }
-    res.redirect("/login");
+    res.redirect("/level");
   });
 });
 

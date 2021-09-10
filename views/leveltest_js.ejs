@@ -182,12 +182,22 @@ var leveltest = {
 		$result.find(".listening_wrap").addClass('step_'+testType+"_"+lvL);
 		$result.find(".reading_wrap").addClass('step_'+testType+"_"+lvR);
 
+		// scoreT = 99
 		$("#eduson_id").val()
 		$("#TestType").val(stepstr)
 		$("#Date").val(date)
 		$("#score").val(scoreT)
 
 
+		if(scoreT>89 && stepstr.includes('LEVEL TEST 1.')){			
+			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('B');return false;">Level2로 이동</a>`
+		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 2.')){			
+			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('C');return false;">Level3로 이동</a></div>`
+		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 3.')){			
+			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('D');return false;">Level4로 이동</a></div>`
+		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 4.')){			
+			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('E');return false;">Level5로 이동</a></div>`
+		} 
 
 
 		var _lev = crtLevel[testNum][lvindex];
@@ -249,10 +259,15 @@ var leveltest = {
         		$(".btn_save").css("display","inline-block");
         	}
         });
+
+
 	}
 }
 
-
+complete= () =>{
+	alert('저장이 완료되었습니다.')
+	location.replace("/level")
+}
 
 
 function audioPlay(obj){
@@ -266,6 +281,7 @@ function audioPlay(obj){
 	audio.load();
 	audio.play();
 }
+
 
 
 </script>
