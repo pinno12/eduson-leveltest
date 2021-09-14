@@ -47,7 +47,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.get("/level", (req, res) => {
+app.get("/level", require('connect-ensure-login').ensureLoggedIn(), (req, res) => {
   res.render("level", { model: {} });
 });
 
@@ -63,7 +63,7 @@ app.post("/level", (req, res) => {
   });
 });
 
-app.get("/result", (req, res) => {
+app.get("/result", require('connect-ensure-login').ensureLoggedIn(), (req, res) => {
   const sql = "SELECT * FROM level ORDER BY id DESC";
   db.all(sql, [], (err, rows) => {
     if (err) {
@@ -78,10 +78,18 @@ app.get('/login',
     res.render('login');
   });
   
-app.post('/login', 
+  app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('result');
+    if (req.user.username == '1'){
+      console.log(req.user.username)
+      res.redirect('result');
+
+      
+    }else{
+      res.redirect('level');
+    }
+    
   });
   
 app.get('/logout',
@@ -122,62 +130,6 @@ app.listen(8080, () => {
 
 
 app.get("/", function (req, res) {
-  res.redirect("/001001/210803");
+  res.redirect("login");
  });
 
-
-let months = [ 210315, 2104,2105, 2106, 210701, 210803, 210902]
-
-
- app.get("/:category/:month",  require('connect-ensure-login').ensureLoggedIn(),(req, res) => {
-  
-  var category= req.params.category;
-  var month = req.params.month;
-  
-  // now
-
-  let now = 6;
-     console.log('month:',month);
- 
-  if(category){
-    db.all(`SELECT * FROM all_3 WHERE category = '${category}' AND date = '${month}' 
-    ORDER BY  sales_qty DESC, first_img`, (err, rows)  => {
-      if(err) {
-        console.log(err);
-
-        res.status(500).send(err);
-      } else {
-      
-        res.render('base', { hoodies: rows, months:months, user: req.user});
-      }    
-    });
-  }else {    
-  
-    res.status(500).send('Internal Server Error');
-  }
-});
-
-
-app.get("/:category/:month/:item",  require('connect-ensure-login').ensureLoggedIn(),(req, res) => {
-  
-  var category= req.params.category;
-  var month = req.params.month;
-  let item = req.params.item;
-
-  let now = 4;
-     console.log('month:',month);
- 
-  if(category){
-    db.all(`SELECT * FROM all_3 WHERE category = '${category}' AND date = '${month}'  AND link = 'https://store.musinsa.com/app/goods/${item}'
-    ORDER BY  sales_qty DESC, first_img`, (err, rows)  => {
-      if(err) {
-        console.log(err);
-        res.status(500).send(err);
-      } else {      
-        res.render('base', { hoodies: rows, months:months, user: req.user});
-      }    
-    });
-  }else {      
-    res.status(500).send('Internal Server Error');
-  }
-});
