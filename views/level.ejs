@@ -76,65 +76,73 @@ function printAfter() {
 		<div class="container bg-white">
 			
 			<div class="test_index on">
-				<h1>Eduson Level Test</h1>
-	
-				<div class="start_box">
-					<ul>
-						<li>
-							<div class="selbox">
-								<span class="type">1</span>
-								<span>Period of Study</span>
-								<span>~ 1years</span>
-							</div>
-							<a href="#" onclick="leveltest.go('A');return false;">GO</a>
-							<!-- <a href="data/BRICKS_LEVEL_TEST_1.zip?ver=20210812" class="btn_down">DOWNLOAD</a> -->
-						</li>
-						<li>
-							<div class="selbox">
-								<span class="type">2</span>
-								<span>Period of Study</span>
-								<span>1~2years</span>
-							</div>
-							<a href="#" onclick="leveltest.go('B');return false;">GO</a>
-							<!-- <a href="data/BRICKS_LEVEL_TEST_2.zip?ver=20210812" class="btn_down">DOWNLOAD</a> -->
-						</li>
-						<li>
-							<div class="selbox">
-								<span class="type">3</span>
-								<span>Period of Study</span>
-								<span>3~4years</span>
-							</div>
-							<a href="#" onclick="leveltest.go('C');return false;">GO</a>
-							<!-- <a href="data/BRICKS_LEVEL_TEST_3.zip?ver=20210812" class="btn_down">DOWNLOAD</a> -->
-						</li>
-						<li>
-							<div class="selbox">
-								<span class="type">4</span>
-								<span>Period of Study</span>
-								<span>4~5years</span>
-							</div>
-							<a href="#" onclick="leveltest.go('D');return false;">GO</a>
-							<!-- <a href="data/BRICKS_LEVEL_TEST_4.zip?ver=20210812" class="btn_down">DOWNLOAD</a> -->
-						</li>
-						<li>
-							<div class="selbox">
-								<span class="type">5</span>
-								<span>Period of Study</span>
-								<span>5years ~</span>
-							</div>
-							<a href="#" onclick="leveltest.go('E');return false;">GO</a>
-							<!-- <a href="data/BRICKS_LEVEL_TEST_5.zip?ver=20210812" class="btn_down">DOWNLOAD</a> -->
-						</li>
-					</ul>
+				<div class = "ui piled segment">
+				<h2 class="ui header">
+					EDUSON LEVEL TEST <br/>
+				</h2>
+					<div class="sub header">
+						<ul>
+							<li>🟡 LEVEL TEST는 공부한 기간에 따라 자동으로 문제의 난이도가 정해집니다.</li>
+							<li>🟡 각 테스트는 리스닝 10개, 리딩 20개, 총 30 문항이 출제되며 리스닝 테스트는 꼭 이어폰을 사용하셔야 합니다.</li>
+							<li>🟡 테스트 시간은 25-30분 정도이며 점수가 80점이 나올 경우, 한 단계 높은 테스트를 선택하면 좀더 정확한 레벨을 알 수 있습니다. </li>
+							<li>🟡 테스트는 마지막 문제까지 풀어야 결과가 나옵니다. </li>		
+						</ul>
+
+					</div>
+				
 				</div>
-				<div class="info_list">
-					<ul>
-						<li>- LEVEL TEST는 공부한 기간에 따라 자동으로 문제의 난이도가 정해집니다.</li>
-						<li>- 각 테스트는 리스닝 10개, 리딩 20개, 총 30 문항이 출제되며 리스닝 테스트는 꼭 이어폰을 사용하셔야 합니다.</li>
-						<li>- 테스트 시간은 25-30분 정도이며 점수가 80점이 나올 경우, 한 단계 높은 테스트를 선택하면 좀더 정확한 레벨을 알 수 있습니다. </li>
-						<li>- 테스트는 마지막 문제까지 풀어야 결과가 나옵니다. </li>		
-					</ul>
+
+<div>
+
+	<div class="list-group">
+		<a href="#" onclick="leveltest.go('E');return false;" class="list-group-item list-group-item-action mb-3 bg-warning">
+			<div class="d-flex w-100 justify-content-between ">
+			  <h5 class="mb-1">Level 5</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">5years~</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		<a href="#" onclick="leveltest.go('D');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #ffcd39;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 4</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">4 ~ 5years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		<a href="#" onclick="leveltest.go('C');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #ffda6a;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 3</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">3~4years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		<a href="#" onclick="leveltest.go('B');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #ffe69c;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 2</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">1~2years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+		  <a href="#" onclick="leveltest.go('A');return false;" class="list-group-item list-group-item-action mb-3" style = "background-color: #fff3cd;">
+			<div class="d-flex w-100 justify-content-between">
+			  <h5 class="mb-1">Level 1</h5>
+			  <small class="text-muted">Eduson English</small>
+			</div>
+			<p class="mb-1">~ 1years</p>
+			<small class="text-muted">Period of Study</small>
+		  </a>
+	  </div>
+
+				<!-- <div class="start_box"> -->
+		
 				</div>
+				<!-- <div class="info_list">
+				
+				</div> -->
 			</div>
 
 			<div id="qA">
