@@ -182,13 +182,13 @@ var leveltest = {
 		$result.find(".listening_wrap").addClass('step_'+testType+"_"+lvL);
 		$result.find(".reading_wrap").addClass('step_'+testType+"_"+lvR);
 
-		scoreT = 99
+	// scoreT = 99
 		$("#eduson_id").val()
 		$("#TestType").val(stepstr)
 		$("#Date").val(date)
 		$("#score").val(scoreT)
 
-
+/*
 		if(scoreT>89 && stepstr.includes('LEVEL TEST 1.')){			
 			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('B');return false;">Level2로 이동</a>`
 		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 2.')){			
@@ -198,7 +198,7 @@ var leveltest = {
 		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 4.')){			
 			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('E');return false;">Level5로 이동</a></div>`
 		} 
-
+*/
 
 		var _lev = crtLevel[testNum][lvindex];
 	    var gradeLev;
