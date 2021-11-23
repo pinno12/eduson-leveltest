@@ -4055,10 +4055,10 @@ function printAfter() {
 							<div class="img imga"><img src="http://www.ebricks.co.kr/leveltest/images/resulta.png" alt=""></div>
 							<div class="img imgb"><img src="http://www.ebricks.co.kr/leveltest/images/resultb.png" alt=""></div>
 							<div class="img imgc"><img src="http://www.ebricks.co.kr/leveltest/images/resultc.png" alt=""></div>
-							<p class="score">Your Score is <span class="scoreT">0</span></p>
+							<!-- <p class="score">Your Score is <span class="scoreT">0</span></p> -->
 						</div>
 					</div>
-					<div class="test_sec">
+					<div class="test_sec d-none">
 						<div class="tit">Score By Category</div>
 						<div class="tb tb_default">
 							<table>
@@ -4076,7 +4076,7 @@ function printAfter() {
 									</tr>	
 									<tr>
 										<td class="line">Listening</td>
-										<td class="line"><span class="scoreL">0</span>/100</td>
+										<td class="line "><span class="scoreL">0</span>/100</td>
 										<td class="line rowdata" rowspan="2"><span class="scoreT">0</span></td>
 										<td class="rowdata" rowspan="2"><span class="crtLevel">0</span></td>
 									</tr>
@@ -4087,7 +4087,6 @@ function printAfter() {
 								</tbody>
 							</table>
 						</div>
-						
 					</div>
 
                     <input type="hidden" id="comment_idx">
@@ -4127,7 +4126,8 @@ function printAfter() {
 					  <input type="text" placeholder="" id = "TestType" name = 'TestType' class = "d-none">
 						<input type="text" placeholder="" id = "Date" name = 'Date' class = "d-none">
 						<input type="text" placeholder="" id = "score" name = 'score' class = "d-none">
-
+						<input type="text" placeholder="" id = "scoreL" name = 'scoreL' class = "d-none">
+						<input type="text" placeholder="" id = "scoreR" name = 'scoreR' class = "d-none">
 				  
 						<div class="btn_wrap">
 					  <input type="submit" value="등록" class="ui button" onclick = "complete()"  style = "display: inline-block"/>

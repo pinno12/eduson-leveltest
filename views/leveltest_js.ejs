@@ -187,18 +187,8 @@ var leveltest = {
 		$("#TestType").val(stepstr)
 		$("#Date").val(date)
 		$("#score").val(scoreT)
-
-/*
-		if(scoreT>89 && stepstr.includes('LEVEL TEST 1.')){			
-			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('B');return false;">Level2로 이동</a>`
-		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 2.')){			
-			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('C');return false;">Level3로 이동</a></div>`
-		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 3.')){			
-			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('D');return false;">Level4로 이동</a></div>`
-		} else if(scoreT>89 && stepstr.includes('LEVEL TEST 4.')){			
-			document.getElementById('next_level').innerHTML = `<a class = "positive ui button" href="#" onclick="leveltest.go('E');return false;">Level5로 이동</a></div>`
-		} 
-*/
+		$("#scoreL").val(scoreL/2)
+		$("#scoreRL").val(scoreR/2)
 
 		var _lev = crtLevel[testNum][lvindex];
 	    var gradeLev;

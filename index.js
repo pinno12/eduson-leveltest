@@ -53,8 +53,8 @@ app.get("/level", require('connect-ensure-login').ensureLoggedIn(), (req, res) =
 
 // POST /create
 app.post("/level", (req, res) => {
-  const sql = "INSERT INTO level (name, phone, eduson_id, TestType, Level, Date, score) VALUES (?,?,?,?,?,?,?)";
-  const book = [req.body.name, req.body.phone,req.body.eduson_id, req.body.TestType, req.body.Level, req.body.Date, req.body.score ];
+  const sql = "INSERT INTO level (name, phone, eduson_id, TestType, Level, Date, score, scoreL, scoreR) VALUES (?,?,?,?,?,?,?,?,?)";
+  const book = [req.body.name, req.body.phone,req.body.eduson_id, req.body.TestType, req.body.Level, req.body.Date, req.body.score, req.body.scoreL, req.body.scoreR ];
   db.run(sql, book, err => {
     if (err) {
       return console.error(err.message);

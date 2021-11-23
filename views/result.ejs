@@ -9,7 +9,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark ui fixed inverted menu" aria-label="Eighth navbar example">
     <div class="container">
       <a class="navbar-brand" href="/login">💓에듀슨잉글리쉬</a>
-      <div class="navbar-collapse collapse" id="navbarsExample07" style="">
+      <div class="navbar-collapse collapse" id="navbarsExample07" >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <a class="me-3 py-2 text-white text-decoration-none" href="/level">문제 보기</a>
        
@@ -34,7 +34,9 @@
         <th>핸드폰</th>
         <th>에듀슨 아이디</th>
         <th>테스트 타입</th>
-        <th>점수</th>
+        <th>듣기 점수</th>
+        <th>독해 점수</th>
+        <th>총 점수</th>
         <th>날짜</th>
       </tr></thead><tbody>
         <% for (const item of model) { %>
@@ -44,6 +46,8 @@
             <td><%= item.phone %></td>
             <td><%= item.eduson_id %></td>
             <td><%= item.TestType %></td>
+            <td><%= item.scoreL %></td>
+            <td><%= item.scoreR %></td>
             <td><%= item.score %></td>
             <td><%= item.Date %></td>
        
